@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class AssessmentsQuestionsComponent {
   @Input() question = '';
+  @Input() assessmentType = '';
 }

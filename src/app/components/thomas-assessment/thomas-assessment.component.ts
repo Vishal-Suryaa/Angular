@@ -8,17 +8,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ThomasAssessmentComponent implements OnInit {
   assessmentType: any;
+  questionNumber = '';
   constructor(private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.assessmentType = this.route.snapshot.params['type'];
+    this.questionNumber = this.route.snapshot.params['tab'];
   }
 
   next() {
-    const currentTab = this.route.snapshot.params['tab'];
-    const nextTab = this.incrementTab(currentTab);
-    this.router.navigate([`/assessments/${this.assessmentType}/${nextTab}`]);
+    this.questionNumber = this.incrementTab(this.questionNumber);
+    this.router.navigate([`/assessments/${this.assessmentType}/${this.questionNumber}`]);
   }
+
 
   private incrementTab(tab: string): string {
     const match = tab.match(/q(\d+)/);
