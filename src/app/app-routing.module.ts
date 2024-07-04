@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { AssessmentsComponent } from './components/assessments/assessments.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'assessment', component: AssessmentsComponent }
+  { path: '', component: DashboardComponent },
+  {
+    path: 'assessments/:type/:tab', component: AssessmentsComponent
+  },
 ];
 
 @NgModule({

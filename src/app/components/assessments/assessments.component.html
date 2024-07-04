@@ -1,2 +1,12 @@
 <app-assessment-nav-bar></app-assessment-nav-bar>
-<app-assessment-info></app-assessment-info>
+<app-assessment-info
+  *ngIf="intro"
+  [title]="assessmentType"
+  [logo]="assessmentType + 'logo'"
+  [subText]="assessmentType + 'subText'"
+  image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akamai.com%2Fproducts%2Fimage-and-video-manager&psig=AOvVaw0Lq_SWcGHwl0Eebn3cqlqq&ust=1720097789274000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIioreL1iocDFQAAAAAdAAAAABAE"
+  (startAssessment)="start()"
+></app-assessment-info>
+<app-thomas-assessment *ngIf="!intro && assessmentType == 'thomas'"> </app-thomas-assessment>
+<app-midas *ngIf="!intro && assessmentType == 'midas'"></app-midas>
+<app-raisec *ngIf="!intro && assessmentType == 'raisec'"></app-raisec>

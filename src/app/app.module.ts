@@ -8,6 +8,10 @@ import { AssessmentNavBarComponent } from './components/assessment-nav-bar/asses
 import { AssessmentsComponent } from './components/assessments/assessments.component';
 import { AssessmentInfoComponent } from './components/assessment-info/assessment-info.component';
 import { AssessmentsQuestionsComponent } from './components/assessments-questions/assessments-questions.component';
+import { ThomasAssessmentComponent } from './components/thomas-assessment/thomas-assessment.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MidasComponent } from './components/midas/midas.component';
+import { RaisecComponent } from './components/raisec/raisec.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { AssessmentsQuestionsComponent } from './components/assessments-question
     AssessmentNavBarComponent,
     AssessmentsComponent,
     AssessmentInfoComponent,
-    AssessmentsQuestionsComponent
+    AssessmentsQuestionsComponent,
+    ThomasAssessmentComponent,
+    DashboardComponent,
+    MidasComponent,
+    RaisecComponent
   ],
   imports: [
     BrowserModule,

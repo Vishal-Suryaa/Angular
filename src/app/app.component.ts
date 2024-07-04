@@ -8,10 +8,4 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'assessments';
-
-  constructor(private router: Router){}
-
-  goToAssessment() {
-    this.router.navigate(['/assessment']);
-  }
 }
