@@ -16,6 +16,7 @@ export class AssessmentsQuestionsComponent implements OnInit, OnChanges {
   @Input() answers: { [key: string]: string } = {};;
   @Input() assessmentType = '';
   @Input() qno = 0;
+  @Input() totalQuestions = 0;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {

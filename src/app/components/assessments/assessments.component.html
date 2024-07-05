@@ -1,13 +1,13 @@
 <app-assessment-nav-bar></app-assessment-nav-bar>
-<app-assessment-info
-  *ngIf="intro"
-  [title]="assessmentType"
-  [logo]="assessmentType + 'logo'"
-  [subText]="assessmentType + 'subText'"
-  image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akamai.com%2Fproducts%2Fimage-and-video-manager&psig=AOvVaw0Lq_SWcGHwl0Eebn3cqlqq&ust=1720097789274000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIioreL1iocDFQAAAAAdAAAAABAE"
-  (startAssessment)="start()"
-></app-assessment-info>
-
+<ng-container *ngIf="intro">
+  <app-assessment-info
+    [title]="assessmentType"
+    [logo]="assessmentType + 'logo'"
+    [subText]="assessmentType + 'subText'"
+    image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akamai.com%2Fproducts%2Fimage-and-video-manager&psig=AOvVaw0Lq_SWcGHwl0Eebn3cqlqq&ust=1720097789274000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIioreL1iocDFQAAAAAdAAAAABAE"
+    (startAssessment)="start()"
+  ></app-assessment-info>
+</ng-container>
 <!-- can have separate components, but results in duplicate code  -->
 <!-- <app-thomas-assessment *ngIf="!intro && assessmentType == 'thomas'">
 </app-thomas-assessment>
@@ -17,10 +17,11 @@
 <!-- better is use common template  -->
 <ng-container *ngFor="let item of riasec?.entries">
   <app-assessments-questions
-     *ngIf="!intro && item.order == qno"
-     [questions]="item.attributes.question"
-     [answers]="item.attributes.answers"
-     [qno]="qno"
-     (nextQuestion)="next()"
+    *ngIf="!intro && item.order == qno"
+    [totalQuestions]="riasec.no_of_questions"
+    [questions]="item.attributes.question"
+    [answers]="item.attributes.answers"
+    [qno]="qno"
+    (nextQuestion)="next()"
   ></app-assessments-questions>
 </ng-container>

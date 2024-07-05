@@ -1,14 +1,12 @@
 <div>
-    <h2>{{ questions.description }}</h2>
-    <div>
-      <div *ngFor="let key of getKeys(answers)">
-        <div>
-          <input type="radio" name="answer" [value]="key"> {{ answers[key] }}
-        </div>
+  <h2>{{ questions.description }}</h2>
+  <div>
+    <div *ngFor="let key of getKeys(answers)">
+      <div>
+        <input type="radio" name="answer" [value]="key" /> {{ answers[key] }}
       </div>
     </div>
-    <div>
-      {{ qno }}
-    </div>
-    <button (click)="next()">Next</button>
+  </div>
+  <div>Q - {{ qno }}/{{ totalQuestions }}</div>
+  <button (click)="next()">Next</button>
 </div>
