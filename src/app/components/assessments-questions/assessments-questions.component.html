@@ -1,4 +1,14 @@
 <div>
-  <h2>{{assessmentType}}</h2>
-  <h2>Question no {{ question }}  </h2>
+    <h2>{{ questions.description }}</h2>
+    <div>
+      <div *ngFor="let key of getKeys(answers)">
+        <div>
+          <input type="radio" name="answer" [value]="key"> {{ answers[key] }}
+        </div>
+      </div>
+    </div>
+    <div>
+      {{ qno }}
+    </div>
+    <button (click)="next()">Next</button>
 </div>

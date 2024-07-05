@@ -15,10 +15,12 @@
 <app-raisec *ngIf="!intro && assessmentType == 'raisec'"></app-raisec> -->
 
 <!-- better is use common template  -->
-<ng-container *ngIf="!intro">
+<ng-container *ngFor="let item of riasec?.entries">
   <app-assessments-questions
-  [assessmentType]="assessmentType"
-    [question]="questionNumber"
+     *ngIf="!intro && item.order == qno"
+     [questions]="item.attributes.question"
+     [answers]="item.attributes.answers"
+     [qno]="qno"
+     (nextQuestion)="next()"
   ></app-assessments-questions>
-  <button (click)="next()">Next</button>
 </ng-container>
