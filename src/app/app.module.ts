@@ -12,6 +12,8 @@ import { ThomasAssessmentComponent } from './components/thomas-assessment/thomas
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MidasComponent } from './components/midas/midas.component';
 import { RaisecComponent } from './components/raisec/raisec.component';
+import { AssessmentBaseComponent } from './components/assessment-base/assessment-base.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { RaisecComponent } from './components/raisec/raisec.component';
     ThomasAssessmentComponent,
     DashboardComponent,
     MidasComponent,
-    RaisecComponent
+    RaisecComponent,
+    AssessmentBaseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync('noop')

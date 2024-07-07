@@ -11,10 +11,13 @@ export class AssessmentInfoComponent {
   @Input() logo = '';
   @Input() image = '';
   @Input() title = '';
-  @Input() subText = '';
   @Input() video = '';
+  @Input() info: string;
+  @Input() description1: string;
+  @Input() description2: string;
 
-  constructor(private router: Router){}
+
+  constructor(private router: Router) { }
 
   start() {
     this.startAssessment.emit(true);

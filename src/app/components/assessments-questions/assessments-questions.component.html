@@ -1,12 +1,16 @@
-<div>
-  <h2>{{ questions.description }}</h2>
-  <div>
-    <div *ngFor="let key of getKeys(answers)">
-      <div>
-        <input type="radio" name="answer" [value]="key" /> {{ answers[key] }}
+<h1>{{ assessConfig.title }}</h1>
+<div *ngFor="let item of entries">
+  <div *ngIf="qno == item.order">
+    <h2>{{ item.attributes.question.description }}</h2>
+    <div>
+      <div *ngFor="let key of getKeys(item.attributes.answers)">
+        <div>
+          <input type="radio" name="answer" [value]="key" />
+          {{ item.attributes.answers[key] }}
+        </div>
       </div>
     </div>
+    <div>Q - {{ item.order }}/{{ assessConfig.totalQuestions }}</div>
+    <button (click)="next()">Next</button>
   </div>
-  <div>Q - {{ qno }}/{{ totalQuestions }}</div>
-  <button (click)="next()">Next</button>
 </div>

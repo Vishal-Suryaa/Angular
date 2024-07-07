@@ -1,27 +1,25 @@
 <app-assessment-nav-bar></app-assessment-nav-bar>
 <ng-container *ngIf="intro">
   <app-assessment-info
-    [title]="assessmentType"
-    [logo]="assessmentType + 'logo'"
-    [subText]="assessmentType + 'subText'"
-    image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akamai.com%2Fproducts%2Fimage-and-video-manager&psig=AOvVaw0Lq_SWcGHwl0Eebn3cqlqq&ust=1720097789274000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIioreL1iocDFQAAAAAdAAAAABAE"
+    [title]="assessConfig.title"
+    [logo]="assessConfig.logo"
+    [info]="assessConfig.info"
+    [description1]="assessConfig.description1"
+    [description2]="assessConfig.description2"
+    [image]="assessConfig.image"
     (startAssessment)="start()"
   ></app-assessment-info>
 </ng-container>
-<!-- can have separate components, but results in duplicate code  -->
-<!-- <app-thomas-assessment *ngIf="!intro && assessmentType == 'thomas'">
-</app-thomas-assessment>
-<app-midas *ngIf="!intro && assessmentType == 'midas'"></app-midas>
-<app-raisec *ngIf="!intro && assessmentType == 'raisec'"></app-raisec> -->
-
-<!-- better is use common template  -->
-<ng-container *ngFor="let item of riasec?.entries">
+<ng-container>
   <app-assessments-questions
-    *ngIf="!intro && item.order == qno"
-    [totalQuestions]="riasec.no_of_questions"
-    [questions]="item.attributes.question"
-    [answers]="item.attributes.answers"
-    [qno]="qno"
-    (nextQuestion)="next()"
+    *ngIf="!intro"
+    [entries]="assessmentData.entries"
+    [assessConfig]="assessConfig"
   ></app-assessments-questions>
 </ng-container>
+<!-- <ng-container *ngIf="finish">
+  <assessment-success>
+
+  </assessment-success>
+</ng-container> -->
+

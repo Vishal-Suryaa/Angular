@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Answers, Attributes, Entry, Question } from '../../store/assessments/assessmenets.model';
+import { Answers, AssessmentConfig, Attributes, Entry, Question } from '../../store/assessments/assessmenets.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,36 +7,33 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './assessments-questions.component.html',
   styleUrl: './assessments-questions.component.css'
 })
-export class AssessmentsQuestionsComponent implements OnInit, OnChanges {
-  @Output() nextQuestion = new EventEmitter();
-  questionNo: number = 0;
-  @Input() questionNumber: string = '';
-  @Input() question = '';
-  @Input() questions: Question = {};
-  @Input() answers: { [key: string]: string } = {};;
-  @Input() assessmentType = '';
-  @Input() qno = 0;
-  @Input() totalQuestions = 0;
+export class AssessmentsQuestionsComponent implements OnInit {
+  @Input() qno = 1;
+  @Input() entries: Entry[] = [];
+  @Input() assessConfig: AssessmentConfig;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
+
   ngOnInit(): void {
-  const s = this.questions.description;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // if (
-    //   (changes.questionNumber && !changes.questionNumber?.firstChange)
-    // ) {
-    //   const tab = this.route.snapshot.params['tab'];
-    //   this.questionNo = tab.split('')[1];
-    // }
-  }
-
-  next() {
-    this.nextQuestion.emit(true);
+    this.entries;
   }
 
   getKeys(obj: any): Array<string> {
     return Object.keys(obj);
+  }
+
+  private incrementTab(tab: string): string {
+    const match = tab.match(/q(\d+)/);
+    if (match) {
+      this.qno = parseInt(match[1], 10) + 1;
+      return `q${this.qno}`;
+    }
+    return tab;
+  }
+
+  next() {
+    let tab = this.route.snapshot.params['tab'];
+    tab = this.incrementTab(tab);
+    this.router.navigate([`/assessments/${this.assessConfig.title.toLowerCase()}/${tab}`]);
   }
 }

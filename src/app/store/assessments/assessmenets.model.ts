@@ -128,3 +128,17 @@ export interface Url {
   height?: number;
   width?: number;
 }
+
+
+export interface AssessmentConfig {
+  title: string;
+  logo: string;
+  image: string;
+  info: string,
+  description1: string,
+  description2: string,
+  apiEndpoint: string;
+  questionTypes: string[];
+  buttonState: string[];
+  totalQuestions: number;
+}
