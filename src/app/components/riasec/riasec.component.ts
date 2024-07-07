@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-raisec',
-  templateUrl: './raisec.component.html',
-  styleUrl: './raisec.component.css'
+  selector: 'app-riasec',
+  templateUrl: './riasec.component.html',
+  styleUrl: './riasec.component.css'
 })
-export class RaisecComponent implements OnInit {
+export class RiasecComponent implements OnInit {
   assessmentType = '';
   questionNumber = '';
 

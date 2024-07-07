@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RaisecComponent } from './raisec.component';
+import { RiasecComponent } from './riasec.component';
 
-describe('RaisecComponent', () => {
-  let component: RaisecComponent;
-  let fixture: ComponentFixture<RaisecComponent>;
+describe('RiasecComponent', () => {
+  let component: RiasecComponent;
+  let fixture: ComponentFixture<RiasecComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RaisecComponent]
+      declarations: [RiasecComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RaisecComponent);
+    fixture = TestBed.createComponent(RiasecComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

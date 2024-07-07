@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { getConfig } from '../../helper/assessment.helper';
-import { AssessmentsService } from '../../services/apiservice/assessments.service';
+import { AssessmentsService } from '../../services/apiService/assessments.service';
 import { AssessmentConfig, RootObject } from '../../store/assessments/assessmenets.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { riasec } from '../../store/assessments.constants';

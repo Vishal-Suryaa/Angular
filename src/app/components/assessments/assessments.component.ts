@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RootObject } from '../../store/assessments/assessmenets.model';
 import { AssessmentBaseComponent } from '../assessment-base/assessment-base.component';
-import { AssessmentsService } from '../../services/apiservice/assessments.service';
+import { AssessmentsService } from '../../services/apiService/assessments.service';
 
 @Component({
   selector: 'app-assessments',

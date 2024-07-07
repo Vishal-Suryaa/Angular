@@ -11,7 +11,7 @@ import { AssessmentsQuestionsComponent } from './components/assessments-question
 import { ThomasAssessmentComponent } from './components/thomas-assessment/thomas-assessment.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MidasComponent } from './components/midas/midas.component';
-import { RaisecComponent } from './components/raisec/raisec.component';
+import { RiasecComponent } from './components/riasec/riasec.component';
 import { AssessmentBaseComponent } from './components/assessment-base/assessment-base.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     ThomasAssessmentComponent,
     DashboardComponent,
     MidasComponent,
-    RaisecComponent,
+    RiasecComponent,
     AssessmentBaseComponent
   ],
   imports: [
