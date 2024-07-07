@@ -1,12 +1,11 @@
 <div>
-  <img [src]="logo" alt="" />
+  <!-- <img [src]="logo" height="50px" width="50px" alt="" /> -->
   <h3>{{ title }}</h3>
-  <img [src]="logo" alt="" height="30px" width="30px">
+  <img [src]="logo" alt="" height="100px" width="100px">
   <h4>{{ info }}</h4>
-  <img [src]="image" alt="">
+  <img [src]="image" height="150px" width="350px" alt="">
   <h6>{{ description1 }}</h6>
   <h6>{{ description2 }}</h6>
-  <img [src]="image" height="30px" width="30px" alt="" />
-  <video [src]="video"></video>
-  <button (click)="start()">Start Assessment</button>
+  <!-- <video [src]="video"></video> -->
+  <button class="btn btn-primary" (click)="start()">Start Assessment</button>
 </div>
